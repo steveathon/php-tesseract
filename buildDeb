@@ -1,0 +1,16 @@
+#! /bin/bash
+#python setup.py --command-packages=stdeb.command sdist_dsc debianize bdist_deb 
+#./cleanall
+#dh_make --createorig -s -c gpl -a -e freetogo@gmail.com
+#dh_make --createorig -c gpl -e freetogo@gmail.com
+export DEBEMAIL=${LOGNAME}@nowhere.com
+export DEBFULLNAME=${USERNAME}  
+rootDir=${PWD}
+pkgName=${PWD##*/}
+baseDir=deb_dist/${pkgName}
+rm deb_dist -Rf
+rm debian/source -Rf
+cd  ${baseDir}
+dch --nmu
+debuild -us -uc
+

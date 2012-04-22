@@ -1,0 +1,5 @@
+swig -php -c++ -I/usr/include/tesseract -I/usr/include/leptonica -o tesseract_wrap.cpp tesseract.i
+gcc -pthread -fno-strict-aliasing -DNDEBUG -g -fwrapv -O2 -Wall -Wstrict-prototypes -fPIC -I. -I/usr/include/tesseract -I/usr/include/leptonica `php-config --includes` -c tesseract_wrap.cpp -o tesseract_wrap.o
+gcc -pthread -fno-strict-aliasing -DNDEBUG -g -fwrapv -O2 -Wall -Wstrict-prototypes -fPIC -I. -I/usr/include/tesseract -I/usr/include/leptonica `php-config --includes` -c main_dummy.cpp -o main_dummy.o
+gcc -pthread -fno-strict-aliasing -DNDEBUG -g -fwrapv -O2 -Wall -Wstrict-prototypes -fPIC -I. -I/usr/include/tesseract -I/usr/include/leptonica `php-config --includes` -c fmemopen.c -o fmemopen.o
+g++ -pthread -shared -Wl,-O1 -Wl,-Bsymbolic-functions -Wl,-Bsymbolic-functions -Wl,-z,relro tesseract_wrap.o main_dummy.o fmemopen.o -lstdc++ -ltesseract -llept -lopencv_core -o tesseract.so
