@@ -1,3 +1,6 @@
+PREFIX=$(shell php-config --prefix)
+
+	 
 all: tesseract.so
 
 tesseract.so : main_dummy.o tesseract_wrap.o
@@ -31,9 +34,7 @@ clean:
 
 install:
 	 install -m 0644 tesseract.so `php-config --extension-dir`
-	 if [ ! -d `php-config --prefix`/share/php ]; then 
-		mkdir `php-config --prefix`/share/php
-	 fi
+	 test -d $(PREFIX)/share/php || mkdir $(PREFIX)/share/php
 	 install -m 0644 tesseract.php `php-config --prefix`/share/php/tesseract.php
 
 uninstall:
