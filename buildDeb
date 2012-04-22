@@ -10,7 +10,7 @@ pkgName=${PWD##*/}
 baseDir=deb_dist/${pkgName}
 rm deb_dist -Rf
 rm debian/source -Rf
-cd  ${baseDir}
+#cd  ${baseDir}
 dch --nmu
 debuild -us -uc
 
