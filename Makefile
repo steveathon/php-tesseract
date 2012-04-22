@@ -35,7 +35,7 @@ install:
 
 uninstall:
 	 rm `php-config --extension-dir`/tesseract.so
-	 rm `php-config --prefix`/share/php/tesseract.php
+	 rm `php-config --prefix`/share/php5/tesseract.php
 
 
 .PHONY: install test
