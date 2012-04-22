@@ -1,0 +1,11 @@
+php-tesseract (0.2-1.1) unstable; urgency=low
+
+  * Non-maintainer upload.
+
+ -- eli <eli@nowhere.com>  Sun, 22 Apr 2012 20:07:52 +0800
+
+php-tesseract (0.2-1) unstable; urgency=low
+
+  * Initial release (Closes: #nnnn)  <nnnn is the bug number of your ITP>
+
+ -- eli <freetogo@gmail.com>  Sun, 22 Apr 2012 20:06:46 +0800
