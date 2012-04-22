@@ -31,11 +31,11 @@ clean:
 
 install:
 	 install -m 0644 tesseract.so `php-config --extension-dir`
-	 install -m 0644 tesseract.php `php-config --prefix`/share/php
+	 install -m 0644 tesseract.php `php-config --prefix`/share/php/tesseract.php
 
 uninstall:
 	 rm `php-config --extension-dir`/tesseract.so
-	 rm `php-config --prefix`/share/php5/tesseract.php
+	 rm `php-config --prefix`/share/php/tesseract.php
 
 
 .PHONY: install test
