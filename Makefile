@@ -1,6 +1,7 @@
-PREFIX=$(shell php-config --prefix)
-
-	 
+PREFIX=$(DESTDIR)$(shell php-config --prefix)
+EXTDIR=$(DESTDIR)$(shell php-config --extension-dir)
+ETCDIR=$(DESTDIR)/etc/php5/conf.d
+SHAREDIR=$(PREFIX)/share/php
 all: tesseract.so
 
 tesseract.so : main_dummy.o tesseract_wrap.o
@@ -33,14 +34,16 @@ clean:
 	rm debian/source -Rf
 
 install:
-	 install -m 0644 tesseract.so `php-config --extension-dir`
-	 test -d $(PREFIX)/share/php || mkdir $(PREFIX)/share/php
-	 install -m 0644 tesseract.php `php-config --prefix`/share/php/tesseract.php
-	 install -m 0644 tesseract.ini /etc/php5/conf.d
+	 test -d $(EXTDIR) || mkdir -p $(EXTDIR)
+	 install -m 0644 tesseract.so $(EXTDIR)
+	 test -d $(SHAREDIR) || mkdir -p $(SHAREDIR)
+	 install -m 0644 tesseract.php $(SHAREDIR)
+	 test -d $(ETCDIR) || mkdir -p $(ETCDIR)
+	 install -m 0644 tesseract.ini $(ETCDIR)
 
 uninstall:
-	 rm `php-config --extension-dir`/tesseract.so
-	 rm `php-config --prefix`/share/php/tesseract.php
-
+	 test ! -f $(EXTDIR)/tesseract.so || rm $(EXTDIR)/tesseract.so
+	 test ! -f $(SHAREDIR)/tesseract.php || rm $(SHAREDIR)/tesseract.php
+	 test ! -f $(ETCDIR)/tesseract.ini  || rm $(ETCDIR)/tesseract.ini 
 
 .PHONY: install test
