@@ -36,6 +36,7 @@ install:
 	 install -m 0644 tesseract.so `php-config --extension-dir`
 	 test -d $(PREFIX)/share/php || mkdir $(PREFIX)/share/php
 	 install -m 0644 tesseract.php `php-config --prefix`/share/php/tesseract.php
+	 install -m 0644 tesseract.ini /etc/php5/conf.d
 
 uninstall:
 	 rm `php-config --extension-dir`/tesseract.so
