@@ -8,7 +8,7 @@ Homepage: <insert the upstream URL, if relevant>
 #Vcs-Git: git://git.debian.org/collab-maint/php-tesseract.git
 #Vcs-Browser: http://git.debian.org/?p=collab-maint/php-tesseract.git;a=summary
 
-Package: php-tesserac
+Package: php-tesseract
 Section: libs
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}

@@ -67,7 +67,8 @@ if test -z "${PHPCONFIGINCLUDES}"; then
    PHPCONFIGINCLUDES="${PHPCONFIGINCLUDES} -I`$PHPCONFIG --prefix`/include/php/sapi/embed"
 fi
 AC_SUBST(PHPCONFIGINCLUDES)
-AC_CONFIG_FILES([Makefile src/Makefile])
+#AC_CONFIG_FILES([Makefile src/Makefile])
+AC_CONFIG_FILES([Makefile])
 AC_OUTPUT()
 #AC_OUTPUT([src/Makefile])
 
