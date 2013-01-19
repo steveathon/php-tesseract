@@ -1,3 +1,17 @@
+php-tesseract (0.4-2.2) UNRELEASED; urgency=low
+
+  * Non-maintainer upload.
+  * 
+
+ -- eli <eli@nowhere.com>  Sat, 19 Jan 2013 20:07:38 +0800
+
+php-tesseract (0.3-0.1) UNRELEASED; urgency=low
+
+  * Non-maintainer upload.
+  * 
+
+ -- eli <eli@nowhere.com>  Sat, 19 Jan 2013 20:05:00 +0800
+
 php-tesseract (0.2-1.1) unstable; urgency=low
 
   * Non-maintainer upload.
