@@ -23,7 +23,7 @@ test:
 	echo "testing 2"
 	#cp tesseract.php test 
 	#cd test
-	php test/test.php
+	php test.php
 clean:
 	rm -f *.o
 	rm build -Rf
@@ -39,12 +39,12 @@ install:
 	 install -m 0644 tesseract.so $(EXTDIR)
 	 test -d $(SHAREDIR) || mkdir -p $(SHAREDIR)
 	 install -m 0644 tesseract.php $(SHAREDIR)
-	 #test -d $(ETCDIR) || mkdir -p $(ETCDIR)
-	 #install -m 0644 tesseract.ini $(ETCDIR)
+	 test -d $(ETCDIR) || mkdir -p $(ETCDIR)
+	 install -m 0644 tesseract.ini $(ETCDIR)
 
 uninstall:
 	 test ! -f $(EXTDIR)/tesseract.so || rm $(EXTDIR)/tesseract.so
 	 test ! -f $(SHAREDIR)/tesseract.php || rm $(SHAREDIR)/tesseract.php
-	 #test ! -f $(ETCDIR)/tesseract.ini  || rm $(ETCDIR)/tesseract.ini 
+	 test ! -f $(ETCDIR)/tesseract.ini  || rm $(ETCDIR)/tesseract.ini 
 
 .PHONY: install test
