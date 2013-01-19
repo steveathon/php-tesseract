@@ -24,6 +24,13 @@ test:
 	#cp tesseract.php test 
 	#cd test
 	php test.php
+
+check:
+	echo "Nothing to Check"
+	
+distclean:
+	make clean
+	
 clean:
 	rm -f *.o
 	rm build -Rf
